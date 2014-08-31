@@ -119,12 +119,6 @@ var validateChallenge = function() {
         err = new InvalidRequestError('invalid_request', {message : 'Invalid date value ' + challenge.subEndDate});
       }
     }
-    // Tags should be an array
-    if(challenge.tags) {
-      if(!controllerHelper.isArray(challenge.tags)) {
-        err = new InvalidRequestError('invalid_request', {message : 'Tags should be an array of text'});
-      }
-    }
     // All validation complete
     if(err) {
       callback(err, null);
